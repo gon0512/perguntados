@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Perguntados</title>
+</head>
+<body>
+
+<%- include ('./partials/navbar.ejs'); %>
+
+<header class="container">
+	<br>
+	<h1>Pergunta</h1>
+	<hr>
+	<br>
+</header>
+
+<section class="container">
+	<% pergunta.forEach(item => { %>
+		<div class="card shadow">
+			<div class="card-header bg-warning">
+				<h3><%= item.titulo %></h3>
+			</div>
+		
+			<div class="card-body">
+				<p class="lead"><%= item.pergunta %></p>
+			</div>
+
+			<div class="card-footer bg-transparent p-2">
+				<p>Autor: <%=  item.nome %></p>
+			</div>
+		</div>
+		<br>
+
+	<% }) %>
+</section>
+
+<header class="container">
+	<br>
+	<h1>Respostas</h1>
+	<hr>
+	<br>
+</header>
+
+<section class="container">
+	<% respostas.forEach(item => { %>
+	<div class="card shadow">
+		<div class="card-body">
+			<h3 class="lead">Resposta:</h3>
+			<p><%= item.resposta %></p>
+		</div>
+		<div class="card-footer bg-transparent p-2">
+			<p>Autor: <%= item.nome %></p>
+		</div>
+	</div><br>	
+	<% }) %>
+</section>
+
+<footer class="bg-warning text-light text-center p-3">
+	<p class="lead">Perguntados&copy; - 2021</p>
+</footer>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
